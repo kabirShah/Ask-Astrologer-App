@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar no-border-top color="navbar">
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle icon-only>
+      <ion-icon ios="ios-menu" md="md-menu"></ion-icon>
+    </button>
+    <ion-title style="font-weight:600;font-family: Raleway">
+    Payment
+    </ion-title>
+  </ion-navbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content> 
+  <div class="payopn" style="
+      border-bottom: 1px solid #d5d6d9;">Payment Options</div>
+
+    <div class="tabcontent">
+     <div class="tabs">
+       <span class="opt" (click)="credit()">Select</span>Credit/Debit Card
+    </div>
+    <div class="tabs">
+      <span class="opt"(click)="cash()">Select</span>Cash/Card On Delivery
+    </div>
+  </div>
+  
+<!--   <button ion-button (click)="goToSecond()">Second Page</button> -->
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar hideBackButton color="navbar"> 
+   <ion-toolbar>
+    <ion-buttons left (tap)="back()">
+    <button ion-button icon-only >
+      <ion-icon name="arrow-back"></ion-icon>
+     </button>
+    </ion-buttons>
+    <ion-title style="font-weight:600;
+                      font-family:Raleway">Thank
+    </ion-title>
+   
+   </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+ <div class="emptyPage">
+  <img src="assets/img/order_sucess.png" title="Empty cart Page Doodle" alt="Empty Cart Page Doodle" width="150px"><div>
+     	Thank For Your Feedback..!</div>
+      <span> "It Keeps Us Motivated..!"</span>
+    </div> 	
+</ion-content>
+<ion-footer>
+	<button 
+  ion-button 
+  full 
+  class="btn" 
+  (click)="continue()"
+  color="navbar">
+  Continue Shopping
+    </button>
+</ion-footer>

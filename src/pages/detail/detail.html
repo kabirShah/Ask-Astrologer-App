@@ -1,0 +1,96 @@
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <ion-toolbar>
+    <ion-title style="font-weight:600;font-family: Raleway">Detail</ion-title>
+ <ion-buttons end (tap)="cart()">
+    <button ion-button icon-only >
+      <ion-icon name="cart" style="padding-right:2px;"></ion-icon>
+     </button>
+    </ion-buttons>
+       <ion-buttons end >
+      <button ion-button icon-only (tap)="OpenShop()" >
+        <ion-icon name="bookmark" style="padding-right:15px;"></ion-icon>
+      </button>
+    </ion-buttons>
+       <ion-buttons end>
+    </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="card product-detail">
+    <ion-slides pager autoplay="2000" loop="true" slidesPerView=1>
+      <ion-slide *ngFor="let slide of slideData">
+      <img style="width: 100%; height:50%;" src="{{slide.image}}" />
+      </ion-slide>
+    </ion-slides> 
+     <ion-list>
+        <ion-item >
+          <div class="pric_desc">
+            <div><span class="tit">{{selectedProduct.product_title}}</span>
+            </div>
+          <span class="a-size-medium">₹{{selectedProduct.product_price}}/-</span>
+          
+          <span class="a-text-strike">₹{{selectedProduct.product_offer}}/- </span>
+          
+          <span  class="disc">
+          {{selectedProduct.product_disc}}
+          </span>
+          <p style="font-family:Raleway;">
+           Inclusive of all taxes 
+         </p>
+       </div>
+          <hr>
+          <div class="iconsize"><ion-icon name="cube" class="iconcolor"></ion-icon><span class="heading">
+     PRODUCT DETAILS</span></div>
+     <p class="details" text-wrap > {{selectedProduct.product_details}}</p>
+                  <hr>
+      <div><ion-icon name="alert"  class="
+iconcolor"></ion-icon><span class="heading">
+      15 DAY RETURN</span></div>
+
+     <p class="details" text-wrap> 
+    {{selectedProduct.product_return}}</p>
+               <hr>
+
+     <div><ion-icon name="resize"  class="
+iconcolor"></ion-icon><span class="heading">
+      SIZE & FIT</span></div>
+
+     <p class="details" text-wrap> 
+          {{selectedProduct.product_weight}} </p>
+                  <hr>
+     <div><ion-icon name="medkit"  class="
+iconcolor"></ion-icon><span class="heading">
+       MATERIAL CARE</span></div>
+        
+     <p class="details" text-wrap> 
+       {{selectedProduct.product_material}} </p>
+         
+        
+  </ion-item>
+    </ion-list>
+        
+  </div>
+
+
+</ion-content>
+
+<ion-footer class="single-footer">
+      <ion-row class="side">
+        <ion-col class="Cart" (click)="OpenShop()">
+           <button ion-button full style="margin-bottom: 0px; margin-top: 0px;" class="btn1">
+             Add to whislist
+           </button> 
+        </ion-col>
+         <ion-col class="Cart" (click)="addToCart()">
+           <button ion-button color="navbar" full style="margin-bottom: 0px; margin-top: 0px;" class="btn" >
+             Add To Cart
+           </button>          
+        </ion-col>
+      </ion-row>
+    
+</ion-footer>

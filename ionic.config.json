@@ -1,0 +1,7 @@
+{
+  "name": "Astrology",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

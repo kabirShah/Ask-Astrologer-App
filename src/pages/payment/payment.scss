@@ -1,0 +1,36 @@
+page-payment {
+	.payopn
+	{
+	    display: absolute;
+	    text-transform: uppercase;
+	    vertical-align: middle;
+	    line-height: normal;
+	    margin-top: 5px; 
+	    font-family: Raleway;
+	    padding: 19px 0 0 15px;
+	    font-size: 16px!important;
+	    width: 100%;
+	    font-style:bold;
+	    font-weight: 600;
+	}
+	.tabs
+	{   
+		display: block;
+	    height: 60px;
+	    border-bottom: 1px solid #d5d6d9;
+	    padding: 19px 0 0 15px;
+	    font-size: 16px;
+  	    font-family: Raleway;
+	}
+	.opt
+	{
+		text-transform: uppercase;
+		color: #526cd0;
+		font-size: 14px;
+		margin: 0 15px 0 0;
+		float: right;
+		font-weight: 600;
+	    font-family: Raleway;
+	}
+}
+

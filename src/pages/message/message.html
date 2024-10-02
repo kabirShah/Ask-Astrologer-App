@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="navbar">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="font-weight:600;font-family: Raleway">Messages</ion-title>
+  </ion-navbar>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+  
+  <div class="container">
+<div class="_e2 _e3" >
+     <div class="ico"><ion-icon name="mail"></ion-icon></div>
+      <h3 text-center>
+        No Message...!
+      </h3>
+</div>
+
+</div>
+      <ion-list *ngFor="let user of users">
+       <ion-card>
+          
+         <ion-card-content *ngIf="users.length > 0">
+
+              <h3>{{user.first_name}} {{user.last_name}}</h3>
+              <p>{{user.email}}</p>
+              <p>{{user.question}}</p>
+          </ion-card-content>
+
+         <ion-card-content *ngIf="users.length==0">
+              No data Found{{user.length}}
+          </ion-card-content>
+          </ion-card>
+     </ion-list>
+</ion-content>

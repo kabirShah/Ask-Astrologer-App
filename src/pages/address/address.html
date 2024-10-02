@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-toolbar>
+    <ion-title style="font-weight:600;font-family: Raleway"
+      >Choose Address</ion-title
+    >
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<form >
+<div class="box" *ngFor="let i of users; let in = index"><!--*ngFor="let user of users"-->
+  <ion-row>
+    <ion-col col-6>
+      <span class="tit"> {{i.full_name}} </span>
+      <div class="adrs" style="text-overflow: ellipsis;">
+        <span> {{i.address}} <!-- {{address}} --></span><br />
+        <span>{{i.locality}} {{i.pincode}} <!-- {{}} --></span><br />
+        <span>  {{i.phone}} </span>
+      </div>
+    </ion-col>
+    <ion-col col-6 style="text-align: right;">
+      <span class="type">{{ i.Adress}}</span>
+      <span class="icon_tick"> 
+
+        <ion-radio value="selected"           
+          
+          ><!-- [(ngModel)]="radio" --> 
+        </ion-radio>
+
+
+
+      </span>
+    </ion-col>
+  </ion-row>
+  <span class="btnn" (click)="edit(i)">Edit</span>
+  <span class="btnn">&nbsp;|</span>
+  <span class="btnn" (click)="delete(in)">Delete</span>
+</div>
+  <div style="text-align:center;">
+    <button ion-button class="btn1" color="navbar" (click)="Address()">
+      + Add New Address
+    </button>
+  </div>
+</form>
+</ion-content>
+<ion-footer>
+  <button
+    ion-button
+    full
+    style="margin-bottom: 0px; margin-top: 0px;"
+    class="btn"
+    (click)="Continue()"
+    color="navbar"  
+  >
+<!--     [disabled]="!homeForm.form.valid"  -->
+    Continue
+  </button>
+
+
+</ion-footer>

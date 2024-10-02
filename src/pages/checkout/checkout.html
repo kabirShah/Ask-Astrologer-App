@@ -1,0 +1,173 @@
+<ion-header>
+  <ion-toolbar color="navbar">
+  <ion-navbar>
+    <ion-title style="font-weight:600;font-family: Raleway"
+      >Add/Edit Address</ion-title
+    >
+  </ion-navbar>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--  -->
+  <form #registerForm="ngForm" class="list-form">
+    <!--     (ngSubmit)="logForm(homeForm)" #homeForm="ngForm" class="list-form" -->
+    <div class="del">
+      Delivery Information
+      <hr class="deli" />
+    </div>
+    <div class="box">
+      <ion-item>
+        <ion-label floating>Receiver's name*</ion-label
+        ><ion-input
+          name="full_name"
+          type="text"
+          [(ngModel)]="full_name"
+          maxLength="25"
+          required
+          ><!----></ion-input
+        >
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Phone Number*</ion-label
+        ><ion-input 
+        name="phone" 
+        type="tel" 
+        [(ngModel)]="phone" 
+        maxLength="10"
+        required>
+          <!---->
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Alternate Number</ion-label
+        ><ion-input 
+        name="alter" 
+        type="tel"
+        [(ngModel)]="alter"
+        maxLength="10" 
+        required>
+          <!-- -->
+        </ion-input>
+      </ion-item>
+    </div>
+    <div class="del">
+      Address
+      <hr class="deli" />
+    </div>
+    <div class="box">
+      <ion-item>
+        <ion-label floating>Pincode*</ion-label>
+        <ion-input 
+        name="pincode" 
+        type="tel" 
+        [(ngModel)]="pincode"
+        maxLength="6" 
+        required>
+          <!---->
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Address </ion-label
+        ><ion-input
+          name="address"
+          type="text"
+          [(ngModel)]="address"
+          maxLength="30"
+          required
+        ></ion-input
+        ><!--  --></ion-item
+      >
+
+      <ion-item>
+        <ion-label floating>Locality*</ion-label>
+        <ion-input 
+        name="locality"
+        type="text" 
+        [(ngModel)]="locality" 
+        maxLength="10"
+        required>
+          <!---->
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Landmark</ion-label>
+        <ion-input 
+        name="landmark" 
+        type="text"
+        [(ngModel)]="landmark"
+        maxLength="10"
+        required>
+          <!---->
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          City*
+        </ion-label>
+        <ion-input 
+        name="city" 
+        type="text" 
+        [(ngModel)]="city" 
+        maxLength="15"
+        required>
+          <!--  -->
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>State*</ion-label
+        ><ion-input 
+        name="state" 
+        type="text" 
+        [(ngModel)]="state" 
+        maxLength="15"
+        required
+          ><!---->
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Country*</ion-label>
+        <ion-input 
+        name="country"
+         type="text"
+          [(ngModel)]="country"
+                  maxLength="15" 
+          required>
+          <!-- [(ngModel)]="user.country" #country="ngModel" -->
+        </ion-input>
+      </ion-item>
+    </div>
+
+<div class="space">
+ <span radio-group  class="del" name="Adress" [(ngModel)]="Adress" >
+       <span style="padding-left: 5px;">
+       <ion-radio value="Home"></ion-radio><span class="rad">Home</span></span>
+         <span style="padding-left: 5px;">
+      
+        <ion-radio value="Office"></ion-radio><span class="rad">Office</span></span>
+          <span style="padding-left: 5px;">
+      
+        <ion-radio value="Other"></ion-radio><span class="rad">Other</span></span>
+</span>
+</div>
+    <div class="footer">
+      <button
+        ion-button
+        full
+        class="btn"
+        color="navbar"
+        [disabled]="!registerForm.form.valid"
+        (click)="save()"
+      ><!---->
+        Submit
+      </button>
+    </div>
+  </form>
+</ion-content>

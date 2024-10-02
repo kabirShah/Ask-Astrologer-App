@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar color="navbar">
+  <ion-navbar>
+  <ion-title style="font-weight:600;font-family: Raleway">Cart</ion-title>
+  </ion-navbar>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="isEmptyCart" class="empty-cart">
+    <div class="empty-results">
+      <h3 text-center>
+          <ion-icon name="cart" style="  font-size:55px !important;
+    color: hsla(0,0%,45.9%,.88);
+"></ion-icon>
+      </h3>
+      <p text-center style="font-size:18px !important;font-family: Raleway">
+        Your cart is empty
+      </p>
+    </div>
+  </div>
+  <ion-item>
+     <div *ngIf="!isEmptyCart" class="cart-itm-wrap">
+      <ion-row>
+           <ion-col col-4>
+              <img  src={{product.product_image}}>
+          </ion-col>
+          <ion-col col-8>
+          <div class="tit">
+          {{product.product_title}}
+          </div>
+        <div>
+          <span class="a-size-medium">
+            ₹{{product.product_price}}/-
+          </span>
+          
+          <span class="a-text-strike">₹{{product.product_offer}}/-
+          </span>
+        </div>
+
+          
+
+          <!-- <div class="qty">
+          <span style="font-size: 14px !important;">Qty:</span><span style="font-size: 14px !important;">1</span><span style="font-size: 12px;" (click)="presentPopover($event)">▼</span>
+          </div> -->
+       <!-- <span style="font-size: 14px !important;">Qty:</span>   
+      <select class="sel" (change)="firstDropDownChanged($event.target.value)">
+        <option>▼</option>
+        <option *ngFor='let v of _values1'>{{ v }}</option>
+      </select> -->
+           <div class="qty">
+         <span style="font-size: 14px !important;">Qty:</span><select  class="sel">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+          </div> 
+
+            <div >
+              <span class="rmv" (click)="removeItem()" >
+                Remove
+              </span> 
+
+              <span class="remove">|</span> 
+             
+              <span class="ltr" (click)="saveItem()" >
+                Save for later
+              </span>
+
+            </div>
+          </ion-col>
+         
+        </ion-row>
+ </div>
+</ion-item>
+<ion-item *ngIf="!isEmptyCart">
+  <span class="ordinfo">Order Information</span>
+      <ion-row>
+        <ion-col col-8>
+          <span class="calc"> Sub Total (Inclusive of all taxes) 
+          </span>
+        </ion-col>
+        <ion-col col-4 style="text-align: right;">
+          <span class="amt" >₹{{product.product_price}}/-
+          </span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8>
+          <span class="calc"> Shipping Charges
+          </span>
+        </ion-col>
+        <ion-col col-4 style="text-align: right;">
+          <span class="amt">₹{{product.product_ship}} /-  
+          </span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+            
+             <ion-col col-8 >
+              <span class="amt">Payable Amount </span> </ion-col>
+             <ion-col col-4 style="text-align: right;">
+              <span class="amt">
+          ₹{{product.subtotal}}/-</span> 
+        </ion-col>
+         
+        </ion-row>
+        </ion-item>
+</ion-content>
+
+<ion-footer *ngIf="!isEmptyCart" class="single-footer">
+
+        <button ion-button full style="margin-bottom: 0px; margin-top: 0px;" color="navbar" (click)="checkOut()"  class="btn">
+         ₹{{product.subtotal}}/- &nbsp; Proceed To Checkout
+        </button>
+</ion-footer>
