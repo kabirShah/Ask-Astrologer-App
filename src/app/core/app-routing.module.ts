@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('../modules/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('../modules/home/home.module').then( m => m.HomePageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '',
@@ -13,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./modules/auth/login/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('../modules/auth/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'registration',
@@ -21,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'auth.module.ts',
-    loadChildren: () => import('./modules/auth/auth.module.ts/auth.module.ts.module').then( m => m.AuthModuleTsPageModule)
+    loadChildren: () => import('../modules/auth/auth.module').then( m => m.AuthModuleTsPageModule)
   },
   {
     path: 'questionnaire-list',
@@ -39,6 +41,10 @@ const routes: Routes = [
     path: 'feedback-form',
     loadChildren: () => import('../modules/feedback/feedback-form/feedback-form.module').then( m => m.FeedbackFormPageModule)
   },
+  {
+    path:'**',
+    redirectTo:'home'
+  }
 ];
 
 @NgModule({
