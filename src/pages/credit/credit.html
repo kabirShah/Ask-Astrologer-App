@@ -1,0 +1,213 @@
+<!--
+  Generated template for the CreditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color="navbar">
+  <ion-navbar> 
+    <ion-title style="font-weight:600;font-family: Raleway">Payment</ion-title>
+  </ion-navbar>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<ion-card>
+      <ion-card-content>  
+
+  <ion-segment class="btn1" color="navbar" [(ngModel)]="paymethods">
+    <ion-segment-button value="creditcard" >
+      Credit card
+    </ion-segment-button>
+    <ion-segment-button value="debitcard">
+      Debit card
+    </ion-segment-button>
+  </ion-segment>
+    <div [ngSwitch]="paymethods">
+        <form  (ngSubmit)="pay(homeForm)" #homeForm="ngForm"  class="list-form">
+        <ion-grid *ngSwitchCase="'creditcard'" >
+        <ion-row>
+          <ion-col>
+             <div class="form-group" [class.has-error]="name.invalid && name.touched" [class.has-success]="name.valid">
+            <ion-item no-padding>
+              <ion-input [(ngModel)]="cardinfo.name" placeholder="Enter Card Holder Name" class="form-control" #name="ngModel" name="name" type="string" required>
+              </ion-input>
+            </ion-item>
+              </div>
+              <p  style="padding: 5px; color: red" class="help-block" *ngIf="name.errors?.required && name.touched">
+                Holder Name is required
+              </p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col>
+            <div class="form-group" [class.has-error]="number.invalid && number.touched" [class.has-success]="number.valid">
+            <ion-item no-padding>
+              <ion-input [(ngModel)]="cardinfo.number" placeholder="Enter Your Card Number" class="form-control" #number="ngModel" name="number"  type="string" maxLength="16" required>
+              </ion-input>
+            </ion-item>
+            </div>
+              <p  style="padding: 5px; color: red" class="help-block" *ngIf="name.errors?.required && name.touched">
+                Card Number is required And it must be 16 Digit..!
+              </p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+        <ion-item>Expiry Month<span>/</span>Year</ion-item>
+          <ion-col col-8>
+           <!-- <div style="width:100% !important">-->
+              <div class="form-group" [class.has-error]="expMonth.invalid && expMonth.touched" [class.has-success]="expMonth.valid">
+              <div class="form-group" [class.has-error]="expYear.invalid && expYear.touched" [class.has-success]="expYear.valid">
+     
+            <ion-item no-padding>
+              <ion-select placeholder="MM"  name="expMonth" #expMonth="ngModel" [(ngModel)]="cardinfo.expMonth" class="max-width full-width" required>
+              <ion-option value="01">01</ion-option>
+                <ion-option value="02">02</ion-option>
+                <ion-option value="03">03</ion-option>
+                <ion-option value="04">04</ion-option>
+                <ion-option value="05">05</ion-option>
+                <ion-option value="06">06</ion-option>
+                <ion-option value="07">07</ion-option>
+                <ion-option value="08">08</ion-option>
+                <ion-option value="09">09</ion-option>
+                <ion-option value="10">10</ion-option>
+                <ion-option value="11">11</ion-option>
+                <ion-option value="12">12</ion-option>              
+              </ion-select>
+              <ion-select placeholder="YY" name="expYear" #expYear="ngModel" [(ngModel)]="cardinfo.expYear" class="max-width full-width" required>
+              <ion-option value="19">19</ion-option>
+                <ion-option value="20">20</ion-option>
+                <ion-option value="21">21</ion-option>
+                <ion-option value="22">22</ion-option>
+                <ion-option value="23">23</ion-option>
+                <ion-option value="24">24</ion-option>
+                <ion-option value="25">25</ion-option>
+                <ion-option value="26">26</ion-option>
+                <ion-option value="27">27</ion-option>
+                <ion-option value="28">28</ion-option>
+                <ion-option value="29">29</ion-option>
+                <ion-option value="30">30</ion-option>              
+              </ion-select>
+            </ion-item>         
+             </div>
+           </div>
+    <p style="padding: 15px; color: red" class="help-block" *ngIf="expMonth.errors?.required && expMonth.touched">Select Your Month...!
+     </p>
+         <p style="padding: 15px; color: red" class="help-block" *ngIf="expYear.errors?.required && expYear.touched">Select Your Year...!
+     </p>
+
+          
+          </ion-col>
+          <ion-col col-4>
+             <!--           <div style="width:100% !important">-->
+
+            <ion-item no-padding>
+              <ion-input type="password" maxLength="3" placeholder="CVC" [(ngModel)]="cardinfo.cvc" name="cvc" required>
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+            <p>3 digits usually found  on the signature strip</p>
+      </ion-grid>
+
+      <ion-grid *ngSwitchCase="'debitcard'">
+        <ion-row>
+          <ion-col>
+             <div class="form-group" [class.has-error]="name.invalid && name.touched" [class.has-success]="name.valid">
+            <ion-item no-padding>
+              <span>Enter Card Holder Name</span>
+              <ion-input [(ngModel)]="cardinfo.name" placeholder="Enter Card Holder Name" class="form-control" #name="ngModel" name="name" type="string" required>
+              </ion-input>
+            </ion-item>
+              </div>
+              <p  style="padding: 5px; color: red" class="help-block" *ngIf="name.errors?.required && name.touched">
+                Holder Name is required
+              </p>
+          </ion-col>
+        </ion-row>
+         <ion-row>
+          <ion-col>
+            <div class="form-group" [class.has-error]="number.invalid && number.touched" [class.has-success]="number.valid">
+            <ion-item no-padding><span>Enter Your Card Number</span>
+              <ion-input [(ngModel)]="cardinfo.number" placeholder="Enter Your Card Number" class="form-control" #number="ngModel" name="number"  ng-required="true" type="string" maxLength="16" required>
+              </ion-input>
+            </ion-item>
+            </div>
+              <p  style="padding: 5px; color: red" class="help-block" *ngIf="name.errors?.required && name.touched">
+                Card Number is required And it must be 16 Digit..!
+              </p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+        <ion-item>Expiry Month<span>/</span>Year</ion-item>
+          <ion-col col-8>
+           <!-- <div style="width:100% !important">-->
+              <div class="form-group" [class.has-error]="expMonth.invalid && expMonth.touched" [class.has-success]="expMonth.valid">
+              <div class="form-group" [class.has-error]="expYear.invalid && expYear.touched" [class.has-success]="expYear.valid">
+     
+            <ion-item no-padding>
+              <ion-select placeholder="MM"  name="expMonth" #expMonth="ngModel" [(ngModel)]="cardinfo.expMonth" class="max-width full-width" required>
+              <ion-option value="01">01</ion-option>
+                <ion-option value="02">02</ion-option>
+                <ion-option value="03">03</ion-option>
+                <ion-option value="04">04</ion-option>
+                <ion-option value="05">05</ion-option>
+                <ion-option value="06">06</ion-option>
+                <ion-option value="07">07</ion-option>
+                <ion-option value="08">08</ion-option>
+                <ion-option value="09">09</ion-option>
+                <ion-option value="10">10</ion-option>
+                <ion-option value="11">11</ion-option>
+                <ion-option value="12">12</ion-option>              
+              </ion-select>
+              <ion-select placeholder="YY" name="expYear" #expYear="ngModel" [(ngModel)]="cardinfo.expYear" class="max-width full-width" required>
+              <ion-option value="19">19</ion-option>
+                <ion-option value="20">20</ion-option>
+                <ion-option value="21">21</ion-option>
+                <ion-option value="22">22</ion-option>
+                <ion-option value="23">23</ion-option>
+                <ion-option value="24">24</ion-option>
+                <ion-option value="25">25</ion-option>
+                <ion-option value="26">26</ion-option>
+                <ion-option value="27">27</ion-option>
+                <ion-option value="28">28</ion-option>
+                <ion-option value="29">29</ion-option>
+                <ion-option value="30">30</ion-option>              
+              </ion-select>
+            </ion-item>         
+             </div>
+           </div>
+    <p style="padding: 15px; color: red" class="help-block" *ngIf="expMonth.errors?.required && expMonth.touched">Select Your Month...!
+     </p>
+         <p style="padding: 15px; color: red" class="help-block" *ngIf="expYear.errors?.required && expYear.touched">Select Your Year...!
+     </p>
+
+          
+          </ion-col>
+          <ion-col col-4>
+             <!--           <div style="width:100% !important">-->
+            <ion-item no-padding>
+              <ion-input type="password" maxLength="3" placeholder="CVC" [(ngModel)]="cardinfo.cvc" name="cvc" required>
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+            <p>3 digits usually found  on the signature strip</p>
+      </ion-grid>
+          <!--    
+       -->
+     </form>
+    </div>
+       </ion-card-content>
+    </ion-card>
+</ion-content>
+<ion-footer>
+  <button ion-button 
+  class="btn" 
+  full [disabled]="!homeForm.form.valid"
+  (click)="pay()"
+  color="navbar"
+   >Pay Now</button>
+</ion-footer>

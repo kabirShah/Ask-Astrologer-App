@@ -1,7 +1,15 @@
 {
+<<<<<<< HEAD
   "name": "new-ionic7-app",
   "integrations": {
     "capacitor": {}
   },
   "type": "angular"
+=======
+  "name": "Astrology",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+>>>>>>> 14adce28f8e676c09263400995566edf95f48791
 }

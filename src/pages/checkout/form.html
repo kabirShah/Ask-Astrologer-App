@@ -1,0 +1,114 @@
+<form>
+  <!--     (ngSubmit)="logForm(homeForm)" #homeForm="ngForm" class="list-form" -->
+  <div class="del">
+    Delivery Information
+    <hr class="deli" />
+  </div>
+  <div class="box">
+    <ion-item>
+      <ion-label>Receiver's name*</ion-label
+      ><ion-input name="full_name" type="text" required
+        ><!--[(ngModel)]="user.full_name" #full_name="ngModel"--></ion-input
+      >
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Phone Number*</ion-label
+      ><ion-input name="phone" type="tel" required>
+        <!--[(ngModel)]="user.phone" #phone="ngModel"-->
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Alternate Number(optional)</ion-label
+      ><ion-input name="alt" type="tel" required>
+        <!--[(ngModel)]="user.alt" #alt="ngModel" -->
+      </ion-input>
+    </ion-item>
+  </div>
+  <div class="del">
+    Address
+    <hr class="deli" />
+  </div>
+  <div class="box">
+    <ion-item>
+      <ion-label>Pincode*</ion-label>
+      <ion-input name="pincode" type="tel" required>
+        <!--[(ngModel)]="user.pincode" #pincode="ngModel"-->
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Address </ion-label
+      ><ion-input name="address" type="text" required></ion-input
+      ><!-- [(ngModel)]="user.address" #address="ngModel" --></ion-item
+    >
+
+    <ion-item>
+      <ion-label>Locality*</ion-label>
+      <ion-input name="locality" type="text" required>
+        <!--[(ngModel)]="user.locality" #locality="ngModel" -->
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Landmark(Optional)</ion-label>
+      <ion-input name="landmark" type="text" required>
+        <!--[(ngModel)]="user.landmark" #landmark="ngModel"-->
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        City*
+      </ion-label>
+      <ion-input name="city" type="text" required>
+        <!-- [(ngModel)]="user.city" #city="ngModel" -->
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>State*</ion-label
+      ><ion-input name="state" type="text" required
+        ><!--[(ngModel)]="user.state" #state="ngModel"-->
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Country*</ion-label>
+      <ion-input name="country" type="text" required>
+        <!-- [(ngModel)]="user.country" #country="ngModel"-->
+      </ion-input>
+    </ion-item>
+  </div>
+
+  <div class="del">
+    Address Type
+    <hr class="deli" />
+    <span style="padding-left: 5px;">
+      <ion-radio
+        name="home"
+        checked="true"
+        value="Home"
+        type="radio"
+        required
+      ></ion-radio
+      ><span class="rad">Home</span>
+    </span>
+    <span style="padding-left: 5px;">
+      <ion-radio name="office" value="office" type="radio" required></ion-radio
+      ><span class="rad">Office</span>
+    </span>
+    <span style="padding-left: 5px;">
+      <ion-radio value="other" type="radio" required></ion-radio
+      ><span class="rad">Other</span>
+    </span>
+  </div>
+
+  <div class="footer">
+    <button ion-button full class="btn" (click)="placeOrder()">
+      <!--       [disabled]="!homeForm.form.valid" -->
+      Submit
+    </button>
+  </div>
+</form>

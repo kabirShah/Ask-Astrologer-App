@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="font-family: Raleway; padding:0px; font-weight:600;">Shopping</ion-title>
+ <ion-buttons end (tap)="addToCart()">
+    <button ion-button icon-only >
+      <ion-icon name="cart" style="padding-right:2px"></ion-icon>
+     </button>
+    </ion-buttons>
+       <ion-buttons end >
+      <button ion-button icon-only (tap)="OpenShop()" >
+        <ion-icon name="bookmark" style="padding-right:15px"></ion-icon>
+      </button>
+    </ion-buttons>
+</ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <ion-list>
+    <ion-item style="padding-left: 0px;padding-right:0px;border-top-width: 0px;border-bottom-width: 0px;
+" >
+
+  <div class="card">
+      <ion-grid text-wrap>
+        <ion-row>
+
+          <ion-col col-6 ion-item style="padding-right: 0px;" *ngFor="let product of product_data|  slice:0.10:slice; let i=index" (click)="itemTapped($event, product)"> 
+          <img style="width: 100%;" src="{{product.product_image}}" />
+
+          <span class="tit">{{product.product_title}}
+          </span>
+          <div class="list">
+          <span class="a-size-medium">₹<b>{{product.product_price}}</b>/-</span>
+          <span class="offer">₹{{product.product_offer}}/-
+          </span>  
+          <div  class="disc">          {{product.product_disc}}</div></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
+</div>
+  <div *ngIf="itemTapped">
+    <div>{{itemTapped.product_id}}</div>
+  </div>
+
+</ion-item>
+</ion-list>
+ 
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="circles"
+      distance="1%"
+      threshold="10%"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+       

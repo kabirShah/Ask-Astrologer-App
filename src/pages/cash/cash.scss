@@ -1,0 +1,52 @@
+page-cash {
+.tabcontent
+{	  display: inline-block;
+	    text-transform: uppercase;
+	    vertical-align: middle;
+	    line-height: normal;
+	    margin-top: 5px; 
+	    font-family: Raleway;
+	    padding: 19px 0 0 15px;
+	    font-size: 18px;
+	    width: 100%;
+	    font-style:bold;
+	    font-weight: 400;
+}
+.btn
+{
+    font-size:15px;
+    background-color: #a8011d !important;
+    border: 1px solid #a8011d !important;
+    font-style: bold;
+    font-family:Raleway;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0px; margin-top: 0px; height:40px;    width: 100%;
+    color: #fff;
+    height: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.tabs
+{
+	display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #282c3f;
+}
+.info
+{
+	display: block;
+    font-size: 12px;
+    color: #696e79;
+    text-transform: none;
+    margin-top: 3px;
+}
+img {
+    max-width: 100%;
+    border: 0;
+    border: 1px solid #d5d6d9;
+    min-width: 50%;
+    min-height: 50%;
+}
+}

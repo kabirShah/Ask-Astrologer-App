@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar hideBackButton color="navbar"> 
+   <ion-toolbar >
+    <ion-buttons left (tap)="back()">
+    <button ion-button icon-only >
+      <ion-icon name="arrow-back"></ion-icon>
+     </button>
+    </ion-buttons>
+
+    <ion-title style="font-weight:600;font-family:Raleway">Sucess</ion-title>
+    
+ 
+</ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div style="font-family: Raleway" class="container">
+<div class="_e2 _e3" >
+      <img src="assets/img/order_sucess.png" title="Empty cart Page Doodle" alt="Empty Cart Page Doodle" width="150px">
+      <p text-center rows="4">
+        <b>
+      	Your Order Has Been Placed SucessFully..!
+      </b>
+      <br/>
+        Now Sit Back And Relax While The Good Folks At our WareHouse Work thier Magic..!
+      </p>
+</div>
+
+</div>
+<div>
+	<ion-textarea type="text" class="text" placeholder="Write a Suggestion...." required></ion-textarea>
+	</div>
+</ion-content>
+<ion-footer>
+<button 
+ion-button 
+full class="btn"
+(click)="thank()"
+color="navbar" >
+      Submit
+    </button>
+</ion-footer>

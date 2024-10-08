@@ -1,0 +1,33 @@
+<ion-menu [content]="content">
+   <ion-header>
+    <ion-toolbar class="user-profile">
+    <ion-grid>   
+      <ion-row>
+          <ion-col col-4>
+              <div class="user-avatar">
+                <img src="assets/img/spl.png">
+              </div>
+          </ion-col>
+          <ion-col padding-top col-8>
+            <h2 ion-text style="color:#E5F7FF;margin-bottom: 5px;font-family: Raleway;">
+              Demo
+            </h2>
+            <span style="margin:0px; padding:0px; color:#E5F7FF; font-family: Raleway;">john@mail.com
+            </span>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <button menuClose ion-item class="side" *ngFor="let page of pages" (click)="openPage(page)">
+        <ion-icon style="font-size:25px !important;
+    color: hsla(0,0%,45.9%,.88); " item-left [name]="page.icon" ></ion-icon>
+        <span style="font-size:15px !important; font-family: Raleway;" ion-text >{{page.title}}</span>
+      </button>
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
