@@ -13,8 +13,6 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from './core.module';
 import { environment } from '../environments/environment';
-
-// import { API_URL } from './core/services/api-url.token';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -24,14 +22,12 @@ import { environment } from '../environments/environment';
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled:environment.production,
     }),
-    provideHttpClient(withInterceptorsFromDi()), // New provider
     CoreModule, // Optional: Contains interceptors, services, etc.
     SharedModule,
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    {provide: API_URL, useValue: environment.apiUrl}
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
